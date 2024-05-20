@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package sso;
+
+option go_package = "sso/authApi";
+
+// Request - Response
+
+service Auth {
+    rpc Registration(RegistrationRequest) returns(RegistrationResponse);
+    rpc Authorization(AuthorizationRequest) returns(AuthorizationResponse);
+}
+
+message RegistrationRequest {
+    string login = 1;
+    string password = 2;
+    bool isAdmin = 3;
+}
+
+message RegistrationResponse {
+    int32 userId = 1;
+}
+
+message AuthorizationRequest {
+    string login = 1;
+    string password = 2;
+}
+
+message AuthorizationResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
+}

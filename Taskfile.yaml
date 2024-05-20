@@ -1,0 +1,9 @@
+version: "3"
+
+tasks:
+  buildAuth:
+    cmds:
+      - protoc -I proto/sso proto/sso/auth.proto --go_out=./gen/go/sso/authApi --go_opt=paths=source_relative --go-grpc_out=./gen/go/sso/authApi --go-grpc_opt=paths=source_relative 
+  buildTokens:
+    cmds:
+      - protoc -I proto/sso proto/sso/tokens.proto --go_out=./gen/go/sso/tokensApi --go_opt=paths=source_relative --go-grpc_out=./gen/go/sso/tokensApi --go-grpc_opt=paths=source_relative 
