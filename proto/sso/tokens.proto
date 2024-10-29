@@ -18,6 +18,7 @@ message CheckTokenRequest {
 
 message CheckTokenResponse {
     bool result = 1; 
+    int32 userId = 2;
 }
 
 message UpdateTokensRequest {
@@ -36,4 +37,5 @@ message IsAdminRequest {
 
 message IsAdminResponse {
     bool result = 1;
+    int32 userId = 2;
 }
